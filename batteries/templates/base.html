@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery Bodyguard</title>
+</head>
+<body>
+  <header>
+    <h1>Battery Bodyguard</h1>
+    {% if user.is_authenticated %}
+      You are signed in as <strong>{{ user.username }}</strong> /
+      <a href="{% url 'home' %}">home</a> /
+      {% comment %}<a href="{% url 'settings' %}">settings</a> /
+      <a href="{% url 'password' %}">change password</a> {% endcomment %}/
+      <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+      <a href="{% url 'login' %}">login</a> /
+      <a href="{% url 'signup' %}">signup</a>
+    {% endif %}
+    <hr>
+  </header>
+{% block content %}
+{% endblock %}
+</body>
+</html>

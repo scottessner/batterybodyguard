@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table id="id_battery_table" class="table">
+    {% for battery in object_list %}
+        <tr>
+            <td>{{ battery.nickname }}</td>
+            <td>{{ battery.cells }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+        <a href="{% url 'battery-add' %}">Add Battery</a>
+{% endblock %}
