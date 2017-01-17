@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>{{ battery.nickname }}</p>
+    <h2>{{ battery.nickname }}</h2>
+    <p>Cells: {{ battery.cells }}</p>
+    <p>Capacity: {{ battery.capacity }} mAh</p>
+    <p>Last Recorded Voltage: {{ battery.cell_voltage }}</p>
+    <a href="{% url 'battery-update' pk=battery.pk %}">Edit</a>
 {% endblock %}

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Create Battery</h2>
+  <h2>{{ task }} Battery</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create</button>
+    <button type="submit">{{ task }}</button>
+    <button type="cancel">Cancel</button>
   </form>
   <br>
 
