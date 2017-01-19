@@ -11,41 +11,41 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 @method_decorator(login_required, name='dispatch')
-class BatteryCreate(CreateView):
+class BatteryCreateView(CreateView):
     model = Battery
     fields = ['cells', 'capacity', 'nickname', 'barcode', 'cell_voltage']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super(BatteryCreate, self).get_context_data(**kwargs)
+        context = super(BatteryCreateView, self).get_context_data(**kwargs)
         context['task'] = 'Create'
         return context
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(BatteryCreate, self).form_valid(form)
+        return super(BatteryCreateView, self).form_valid(form)
 
 
 @method_decorator(login_required, name='dispatch')
-class BatteryUpdate(UpdateView):
+class BatteryUpdateView(UpdateView):
     model = Battery
     fields = ['cells', 'capacity', 'nickname', 'barcode', 'cell_voltage']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super(BatteryUpdate, self).get_context_data(**kwargs)
+        context = super(BatteryUpdateView, self).get_context_data(**kwargs)
         context['task'] = 'Update'
         return context
 
 
 @method_decorator(login_required, name='dispatch')
-class BatteryDetail(DetailView):
+class BatteryDetailView(DetailView):
 
     model = Battery
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super(BatteryDetail, self).get_context_data(**kwargs)
+        context = super(BatteryDetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         # context['battery_list'] = Battery.objects.all()
         return context
