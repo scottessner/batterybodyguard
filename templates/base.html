@@ -21,10 +21,10 @@
                 <a class="navbar-brand" href="#">Battery Bodyguard</a>
             </div>
             <div class="collapse navbar-collapse" id="bbg-navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li>You are signed in as <strong>{{ user.username }}</strong></li>
-                        <li><a href="{% url 'battery-list' %}">my batteries</a></li>
+                        <li><a href="{% url 'battery-list' %}">My Batteries</a></li>
+                        <li><p class="navbar-text">You are signed in as <strong>{{ user.username }}</strong></p></li>
                     {% else %}
                         <li><a href="{% url 'login' %}">Login</a></li>
                         <li><a href="{% url 'signup' %}">Signup</a></li>
