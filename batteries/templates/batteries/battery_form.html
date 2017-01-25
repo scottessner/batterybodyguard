@@ -1,12 +1,12 @@
-{% extends "base.html" %}
+{% extends "__base.html" %}
 
 {% block content %}
   <h2>{{ task }} Battery</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">{{ task }}</button>
-    <button type="cancel">Cancel</button>
+    <button class="btn btn-primary" type="submit">{{ task }}</button>
+    <button class="btn btn-primary" type="cancel">Cancel</button>
   </form>
   <br>
 

@@ -1,13 +1,23 @@
-{% extends 'base.html' %}
+{% extends '__base.html' %}
 {% block content %}
-    <table id="id_battery_table" class="table">
-    {% for battery in object_list %}
-        <tr>
-            <td>{{ battery.nickname }}</td>
-            <td>{{ battery.cells }}</td>
-            <td><a href="{% url 'battery-detail' pk=battery.pk %}">Details</a></td>
-        </tr>
-    {% endfor %}
-    </table>
-        <a href="{% url 'battery-add' %}">Add Battery</a>
+    <div class="row">
+        {% for battery in object_list %}
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h2>{{ battery.nickname }}</h2></div>
+                    <div class="panel-body">
+                        <p>Cells: {{ battery.cells }}</p>
+                        <p>Capacity: {{ battery.capacity }}</p>
+                        <p>Barcode: {{ battery.barcode }}</p>
+                        <p>Cell Voltage: {{ battery.cell_voltage }}</p>
+                        <p>Pack Voltage: {% widthratio battery.cell_voltage 1 battery.cells %}</p>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary" href="{% url 'battery-update' pk=battery.pk %}">Edit</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a class="btn btn-lg" href="{% url 'battery-add' %}">Add Battery</a>
 {% endblock %}
