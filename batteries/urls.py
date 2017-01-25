@@ -4,6 +4,6 @@ from batteries.views import BatteryCreateView, BatteryUpdateView, BatteryDetailV
 urlpatterns = [
     url(r'^batteries/$', BatteryListView.as_view(), name='battery-list'),
     url(r'^batteries/add/$', BatteryCreateView.as_view(), name='battery-add'),
-    url(r'^batteries/(?P<pk>[0-9]+)/update/$', BatteryUpdateView.as_view(), name='battery-update'),
-    url(r'^batteries/(?P<pk>[0-9]+)/$', BatteryDetailView.as_view(), name='battery-detail'),
+    url(r'^batteries/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/update/$', BatteryUpdateView.as_view(), name='battery-update'),
+    url(r'^batteries/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/$', BatteryDetailView.as_view(), name='battery-detail'),
 ]
