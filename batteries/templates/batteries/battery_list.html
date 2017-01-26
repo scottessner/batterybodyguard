@@ -9,8 +9,6 @@
                         <p>Cells: {{ battery.cells }}</p>
                         <p>Capacity: {{ battery.capacity }}</p>
                         <p>Barcode: {{ battery.barcode }}</p>
-                        <p>Cell Voltage: {{ battery.cell_voltage }}</p>
-                        <p>Pack Voltage: {% widthratio battery.cell_voltage 1 battery.cells %}</p>
                     </div>
                     <div class="panel-footer">
                         <a class="btn btn-primary" href="{% url 'battery-update' pk=battery.pk %}">Edit</a>
