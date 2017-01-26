@@ -10,13 +10,11 @@ class BatteryForm(forms.models.ModelForm):
 
     class Meta:
         model = Battery
-        fields = ('cells', 'capacity', 'nickname', 'barcode', 'cell_voltage')
+        fields = ('capacity', 'nickname', 'barcode')
         widgets = {
-            'cells': forms.fields.IntegerField(),
             'capacity': forms.fields.IntegerField(),
             'nickname': forms.fields.TextInput(),
             'barcode' : forms.fields.TextInput(),
-            'cell_voltage' : forms.fields.DecimalField(),
             #'text': forms.fields.TextInput(attrs={
             #   'placeholder': 'Enter a to-do item',
             #   'class': 'form-control input-lg',

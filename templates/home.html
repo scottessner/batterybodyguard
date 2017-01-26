@@ -1,4 +1,21 @@
 {% extends '__base.html' %}
 {% block content %}
-<h1>Welcome!{{ user.first_name }}</h1>
+    <div class="jumbotron">
+        <h1 class="text-center">Battery Bodyguard</h1>
+        <p class="text-center">Your batteries deserve protection.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <figure class="figure">
+                <img class="figure-img img-fluid rounded" src="/static/img/battery_fire.jpg" width="100%">
+                <figcaption class="figure-caption text-right">
+                    <a href="https://www.flickr.com/photos/locutis/2100430649">hot flame</a> by Brett Samuel is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-md-6">
+            <h2>Batteries can be dangerous.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+        </div>
+    </div>
 {% endblock %}
